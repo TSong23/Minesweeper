@@ -1,9 +1,13 @@
-import * as Minesweeper from '../minesweeper.js'
+import * as Minesweeper from '../minesweeper.js';
+import React from 'react';
+import Board from './board.jsx';
 
 class Game extends React.Component {
-  constructor () {
-    this.state.board = new Minesweeper.Board()
-
+  constructor (props) {
+    super(props);
+    const board = new Minesweeper.Board(9,10);
+    this.state = { board: board};
+    this.updateGame = this.updateGame.bind(this);
   }
 
   updateGame() {
@@ -11,14 +15,15 @@ class Game extends React.Component {
   };
 
   render(){
-    let currentBoard = this.state.board;
-    let updateGame = this.updateGame;
+
     return(
       <div>
-        <h1>Game Board should show up here</h1>
+        <Board board={this.state.board} 
+                updateGame = {this.updateGame}/>
       </div>
-    )
+    );
   }
 
-
 }
+
+export default Game;
