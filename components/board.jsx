@@ -19,7 +19,8 @@ export default class Board extends React.Component{
               {row.map( (tile, j) => {
                 return (
                   <Tile tile={tile}                         
-                        key={i * board.gridSize + j}/>
+                        key={i * board.gridSize + j}
+                        updateGame={this.props.updateGame}/>
                 );
               } 
             )}
