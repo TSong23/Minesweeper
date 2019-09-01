@@ -1,31 +1,25 @@
-#root {
-  width: 800px;
-  margin: 0 auto;
-  text-align: center;
-
+#board {
+  display: flex;
+  flex-flow: column;
+  align-content: center;
 }
 
 .row {
-  width: 250px;
-  margin: 0 auto;
-}
-
-.row:after {
-  content: "";
-  clear: both;
-  display: block;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
 }
 
 .tile {
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
   background: lightgray;
   float: left;
   border-style: outset;
   border-width: 2px;
   line-height: 20px;
   padding-left: 3px;
-  font-size: 14px;
+  font-size: 25px;
   font-weight: bold;
   position: relative;
   text-align: center;
